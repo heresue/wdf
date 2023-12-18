@@ -1,0 +1,149 @@
+/* reset (아래 8개는 기본으로 외우기) */
+*{
+    margin: 0;
+    color: #222328;
+    padding: 0;
+    line-height: 1.5;
+    text-decoration: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.wrap {
+    width: 1200px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+#logo a {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    font-size: 25px;
+}
+
+#gnb .depth1 {
+    display: flex;
+    /* gap: 50px; */
+}
+
+#gnb .depth1:hover .depth2{
+    display: block;
+    background-color: white;
+}
+
+#gnb .depth1 > li > a {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+}
+
+#gnb .depth2 {
+    display: none;
+}
+
+.slide ul {
+    display: flex;
+}
+.slide ul a {
+    display: block;
+}
+/* a태그는 inline 요소이기 때문에 기본영역이 다름
+block요소로 변경해서 영역을 새로 지정해줄수있음 (선택사항) */
+.slide ul img {
+    display: block;
+}
+/* 이미지는 inline 요소이기 때문에 아래 스페이스 영역이 생김
+block요소로 변경해서 딱맞게 다시 지정해줄 수 있음
+(실무에서는 필요시 / 시험에서는 지정하기)*/
+
+#main {
+    height: 200px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.sec-g {
+    /* width: 33.333%; */
+    flex-grow: 1;
+    /* 1: true(참), 0: false(거짓) */
+    flex-basis: 0;
+    padding: 10px 0;
+}
+/* 배너간 공간주는법
+    - Section width 비율 줄이기 (33.333% -> 32%)
+    - main에 gap 추가 */
+
+.sec-g .sec-tit {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* bbs */
+.sec-bbs .list-bbs a {
+    display: block;
+    /* padding: 5px 0; */
+}
+
+.sec-bbs .list-bbs li::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+    background-color: black;
+}
+
+.list-bbs li {
+    display: flex;
+    align-items: center;
+}
+
+.sec-bnr .sec-tit,
+.sec-goto .sec-tit {
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 0;
+    margin-bottom: 0;
+}
+
+.sec-goto .list-goto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 100%;
+}
+
+.sec-goto .list-goto li {
+    width: 48%;
+    height: 48%;
+    background: yellow;    
+}
+
+.sec-goto .list-goto a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    line-height: 85px;
+    /* or [display: flex] 설정 후 정렬 (가운데정렬하는방법2) */
+}
+
+
+#footer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid black;
+}

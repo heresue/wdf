@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이밍 표기법</title>
+</head>
+<body>
+    <h1>네이밍 표기법</h1>
+    
+    <h2>BEM 표기법</h2>
+    <!-- block -->
+    <div class="slide">
+        <!-- element : block__element -->
+        <div class="slide__item">slide</div>
+        <!-- block__element--modifier -->
+        <div class="slide__item slide__item--active">slide</div>
+        <div class="slide__item">slide</div>
+    </div>
+
+    <form action="" class="form form--login">
+        <input type="text">
+        <input type="submit" value="전송" class="form__submit--disabled">
+    </form>
+
+</body>
+</html>

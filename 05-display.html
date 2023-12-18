@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+</head>
+<body>
+    <h1>display</h1>
+
+    <h2>block(기본값) & none</h2>
+    <!-- w, h 값 가능 -->
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="block none">block</div>
+    <!-- display: none 스크린 리더기가 읽지 않아 -->
+    <style>
+        .none {
+            display: none;
+        }
+        .block {
+            width: 100px;
+            height: 50px;
+            background: indianred;
+            border: 1px solid black;
+        }
+    </style>
+
+    <h2>inline(일반 글씨)</h2>
+
+    <div class="inline">inline</div>
+
+        <style>
+            .inline::after {
+                display: block;
+                content: '';
+                width: 100px;
+                height: 100px;
+                background: blue;
+            }
+            .inline {
+                display: inline;
+                width: 150px;
+                height: 50px;
+                border: 1px solid black;
+                background: yellow;
+            }
+        </style>
+
+
+    <h2>inline-block(가로,세로 값 가능, 글자처럼 옆으로 배치)</h2>
+    <div class="box1"></div>
+    바로가기
+    <style>
+        .box1 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: aquamarine;
+            vertical-align: middle;
+        }
+    </style>
+    
+
+    <h2>**flex**(layout)</h2>
+    
+</body>
+</html>

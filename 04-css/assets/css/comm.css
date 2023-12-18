@@ -1,0 +1,206 @@
+@import url(reset.css);
+@import url(fonts.css);
+
+
+.desc1 {
+    font-size: 20px;
+    color: red;
+    font-weight: 800;
+}
+
+.desc2 {
+    font-size: 20px;
+    color: lightgreen;
+    
+}
+
+p.desc1 {
+    color: burlywood;
+}
+
+#main {
+    width: 500px;
+    background-color: rgb(247, 197, 205);
+}
+
+.header {
+    background-color: #eeeeee;
+}
+
+.header.dark {
+    background-color: #333;
+}
+
+.header .depth1 {
+    background-color: rgb(0, 255, 170);
+}
+
+#gnb .depth1 li {
+    background-color: rgb(253, 253, 124);
+}
+
+#gnb .depth1 a {
+    background-color: white;
+}
+
+#gnb .depth1 a {
+    color: orange;
+}
+
+#gnb .depth1 > li {
+    background-color: skyblue;
+}
+
+#gnb .depth1 > li > a {
+    background-color: rgb(126, 103, 103);
+}
+
+#gnb .depth2 a {
+    background-color: black;
+}
+
+#gnb .depth2 a:hover {
+    background-color: red;
+    color: white;
+}
+
+.input {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(177, 92, 177);
+}
+.input:focus {
+    width: 300px;
+    height: 30px;
+    background-color: white;
+}
+
+.bbs li a {
+    color: red
+}
+
+.bbs li:first-child {
+    background-color: rgb(198, 248, 123);
+}
+
+.bbs li:first-child a {
+    color: blue;
+}
+
+.bbs li:last-child {
+    background-color: yellow;
+}
+
+.bbs li:last-child a {
+    color: brown;
+}
+
+.bbs li:nth-child(2) {
+    background-color: rgb(92, 92, 165);
+}
+
+.bbs li:nth-child(2) a {
+    color: magenta;
+}
+
+.goto li::before {
+    content: '>';
+}
+
+.goto li::after {
+    content: '<';
+}
+
+.goto a {
+    color: black !important;
+}
+
+.goto a::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(./images/mobile_212852414260.png) 0 0 no-repeat ;
+    background-size: 100%;
+}
+
+.goto a::after {
+    color: gray;
+    content: '*';
+}
+
+.icon li:first-child::before {
+    content: "\f015";
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+}
+
+.icon li:nth-child(2)::before {
+    content: "\f002";
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+}
+
+.icon li:nth-child(3)::before {
+    content: "\f09b";
+    font-family: 'Line Awesome Brands';
+}
+
+.icon li:nth-child(4)::before {
+    content: "\f16d";
+    font-family: 'Line Awesome Brands';
+}
+
+.icon li:last-child::before {
+    content: "\f167";
+    font-family: 'Line Awesome Brands';
+}
+
+.icon li:first-child a::after {
+    content: '======='
+}
+
+
+/* font */
+
+.font-size1 {
+    font-size: 20px;
+}
+
+.font-size2 {
+    font-size: 1.25em;
+    /* 12px 기준으로 1.25em은 15px */
+    /* 부모 기준 */
+}
+
+.font-size3 {
+    /* 20px */
+    font-size: 1.666em;
+}
+
+.font-size4 {
+    font-size: 1.666em;
+}
+
+.font-size5 {
+    font-size: 1.666rem;
+}
+
+.font-size6 {
+    font-size: 1.666rem;
+}
+
+.font-size7 {
+    font-size: 10vw;
+}
+
+.font-f1 {
+    font-family: 'Sofia', cursive;
+}
+
+.font-f2 {
+    font-size: 30px;
+    font-family: Shizuru;
+}
+/* 폰트패밀리가 없으면 폰트 이름 넣기 */
+

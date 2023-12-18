@@ -1,0 +1,12 @@
+/* reset 전체 셋팅값 */
+*{
+    /* font-size: 16px; 브라우저의 기본 폰트 사이즈 */
+    font-size: 12px;
+    font-family: "Noto Sans", "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

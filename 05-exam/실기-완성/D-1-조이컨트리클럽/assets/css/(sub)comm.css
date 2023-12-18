@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.wrap {
+    display: flex;
+    height: 100vh;
+    width: 1280px;
+    background-color: lightskyblue;
+    margin: 0 auto;
+    /* 바디 가운데정렬 무조건 margin 0 auto (바디한테 플렉스를 넣을 수 없기 때문에!) */
+    flex-direction: column;
+}
+
+#header {
+    height: 100px;
+    background-color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+}
+
+#main {
+    flex-grow: 1;
+    background-color: lightgray;
+}
+
+.aside {
+    width: 300px;
+    background-color: lightgoldenrodyellow;
+}
+
+#footer {
+    height: 100px;
+}

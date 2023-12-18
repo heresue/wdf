@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+</head>
+<body>
+    <h1>background</h1>
+
+    <h2>background-color</h2>
+
+    <div class="bg1">
+        <div class="box1"></div>
+    </div>
+    <style>
+        .bg1 {
+            height: 100px;
+            background-color: lightcoral;
+        }
+
+        .bg1 .box1 {
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+
+    <h2>background-image</h2>
+
+    <div class="bg2"></div>
+
+    <style>
+        .bg2 {
+            height: 500px;
+            /* background-image: url('./images/road.avif');
+            background-position: -700px 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: yellow; */
+
+            background: yellow url('./images/road.avif') no-repeat -700px 0 fixed;
+            
+        
+        }
+    </style>
+
+    <div class="bg3"></div>
+    <style>
+        .bg3 {
+            height: 500px;
+            background-color: lightblue;
+            background-image: url(./images/icon_pinterest.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+    </style>
+
+    <h2>background-size</h2>
+
+    <div class="bg4"></div>
+    <div class="bg5"></div>
+
+    <style>
+        .bg4 {
+            width: 300px;
+            height: 150px;
+            background-color: yellow;
+            background-image: url(./images/youtube.png);
+            background-repeat: no-repeat;
+            background-position: 0% 50%;
+            /* background-size: 100% auto; */
+            background-size: contain;
+            /* 배경이 잘려나가지 않고 박스 안에 배경을 모두 보이게*/
+            /* 로고, 이미지 */
+        }
+
+        .bg5 {
+            width: 300px;
+            height: 150px;
+            background: yellowgreen url(./images/road.avif) no-repeat 0 0 / cover;
+            /* cover : 배경 이미지 채울 때 */
+        }
+    </style>
+
+    <h2>Image Sprites</h2>
+
+    <a href="#" class="link home">홈</a>
+    <a href="#" class="link prev">이전</a>
+    <a href="#" class="link next">다음</a>
+
+    <style>
+        .link {
+            display: inline-block;
+            height: 44px;
+            text-indent: -9999px;
+            background-image: url(./images/img_navsprites.gif);
+            background-repeat: no-repeat;
+        }
+        .next {
+            width: 44px;
+            background-position: -91px 0;
+        }   
+        .prev {
+            width: 43px;
+            background-position: -47px 0;
+        }   
+        .home {
+            width: 46px;
+            background-position: 0 0;
+        }
+    </style>
+
+
+    <div class="webtoon">네이버웹툰</div>
+
+    <style>
+        .webtoon {
+            width: 67px;
+            height: 63px;
+            background: url(./images/sp_main.d5b6c236.png) no-repeat -459px -434px;
+            text-indent: -9999px;
+        }
+        </style>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

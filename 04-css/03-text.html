@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+</head>
+<body>
+    <h1>text</h1>
+
+    <div class="text1">글씨 정렬</div>
+    <style>
+        .text1{width: 500px; background-color: yellow;}
+    </style>
+
+    <div class="text2">가운데 정렬</div>
+    <style>
+        .text2{
+            text-align: center;
+            width: 500px;
+            background-color: yellow
+        }
+    </style>
+    
+    <!-- div는 block 요소 -->
+    <div class="box1">
+        <span class="box2">인라인 요소</span>
+    </div>
+    <style>
+        .box1 {
+            /* vertical-align: middle; */
+            text-align: center;
+            width: 500px;
+            height: 200px;
+            background-color: lightblue;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            line-height: 200px;
+            background-color: greenyellow;
+        }
+    </style>
+
+    <h2>vertical-align: middle;</h2>
+
+    <img src="./images/icon_pinterest.jpg" alt="" class="img-p"> 핀터레스트
+
+    <style>
+        .img-p {
+            /* display: block; 블럭 요소는 안돼 */
+            /* 인라인 요소만 가능 */ 
+            vertical-align: middle;
+        }
+    </style>
+
+    <h2>Text-Decoration &#38; Text-Transformation</h2>
+
+    <a href="#">goto</a>
+
+    <style>
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 20px;
+        }
+    </style>
+
+    <h2>Text-Indentation</h2>
+
+    <div class="indent">
+        글씨 날려버림
+    </div>
+    <!-- 일반인에게는 안 보이고 시각장애인에게는 들리게-->
+
+    <style>
+        .indent {
+            text-indent: -9999px;
+        }
+    </style>
+
+    <h2>Line-height &#38; Letter-spacing</h2>
+
+    <div class="txt1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate explicabo culpa sit officiis. Quidem, eius corporis architecto nemo libero minima deserunt laudantium sed, facere pariatur itaque mollitia eum atque dignissimos.</div>
+
+    <style>
+        .txt1 {
+            font-size: 100px;
+            line-height: 1;
+            letter-spacing: -0.3px;
+        }
+    </style>
+
+<br><br><br><br>
+    <h2>White Space</h2>
+
+    <div class="txt2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde fugiat soluta quos, eius omnis ipsam culpa quis, eveniet, dolore ducimus dignissimos ea impedit ratione vel tempore similique architecto ipsum cupiditate?</div>
+
+    <style>
+        .txt2 {
+            font-size: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

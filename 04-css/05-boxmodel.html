@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <link rel="stylesheet" href="./assets/css/comm.css">
+</head>
+<body>
+    <h1>Box Model</h1>
+
+    <div class="box1">컨텐츠</div>
+
+    <style>
+        .box1 {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            border: 5px solid blue;
+            padding-top: 50px;
+            padding-left: 100px;
+            margin-left: 50px;
+
+        }
+    </style>
+
+    <h2>width(100%) & height(0)</h2>
+
+    <div class="box2">block</div>
+    <div class="box2">block</div>
+    <div class="box2">block</div>
+    <style>
+        .box2 {
+            /* width: 300px; */
+            /* height: 100px; */
+            background-color: greenyellow;
+
+        }
+    </style>
+
+    <!-- inline 요소 -->
+    <!-- width, height 값이 안들어감-->
+    <span class="box3"> inline </span>
+    <span class="box3"> inline </span>
+    <span class="box3"> inline </span>
+
+    <style>
+        .box3 {
+            width: 100%;
+            height: 50px;
+            background: skyblue;
+        }
+    </style>
+    
+        <!-- inline-block -->
+    <span class="box4">inline-block</span>
+    <span class="box4">inline-block</span>
+    <span class="box4">inline-block</span>
+
+    <style>
+        .box4 {
+            background: yellow;
+            width: 100px;
+            height: 50px;
+            display: inline-block;
+        }
+    </style>
+
+
+    <h2>max-width</h2>
+
+    <div class="maxw">max width</div>
+    <div class="minw">min width</div>
+
+    <style>
+        .maxw {
+            max-width: 1280px;
+            max-height: 500px;
+            /* width: 100% */
+            height: 600px;
+            background: cadetblue;
+            margin: 0 auto;
+        }
+
+        .minw {
+            min-width: 320px;
+            min-height: 100vh;
+            background: royalblue;
+        }
+    </style>
+
+
+    <h2>border</h2>
+
+    <div class="border">border</div>
+
+    <style>
+        .border {
+            height: 300px;
+            background: #eee;
+            /* border-style: dashed;
+            border-width: 5px;
+            border-color: rgba(255,0,0,0.5) */
+            border: 1px solid rgba(255,0,0,0.5);
+            /* border-bottom: 1px solid rgba(255,0,0,0.5); */
+            /* border: none; */
+            border-radius: 302px;
+        }
+    </style>
+
+    <h2>border-radius</h2>
+    <div class="radius">
+        <style>
+            .radius {
+                background: wheat;
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+            }
+        </style>
+    </div>
+
+
+    <h2>padding</h2>
+
+    <div class="padding">padding</div>
+    <div class="padding">padding abcdefghijkl</div>
+    <div class="padding">padding</div>
+
+    <style>
+        /* 유동적인 버튼을 생성하고 싶을 땐 */
+        /* display: inline-block로 변경해서 */
+        /* width: 100% 해제 */
+        /* padding으로 여백 조절 */
+        .padding {
+            background: coral;
+            border: 1px solid black;
+            padding: 20px;
+            display: inline-block;
+        }
+    </style>
+
+    <div class="padding2">padding2</div>
+
+    <style>
+        .padding2 {
+            display: inline;
+            padding: 20px 30px;
+            margin-top: 50px;
+            border: 1px solid palegreen;
+            background: yellow;   
+        }
+    </style>
+
+    <h2>margin</h2>
+
+    <div class="margin">margin</div>
+    <div class="margin box">margin</div>
+    <div class="margin">margin</div>
+
+    <style>
+        .margin {
+            margin: 60px;
+            border: 1px solid peru;
+            background: peachpuff;
+        }
+
+        .box {
+            margin-top: 120px;
+        }
+    </style>
+
+    <div class="margin2">block 요소 가운데 정렬
+        <div class="margin3">가운데 정렬</div>
+    </div>
+
+    <style>
+        .margin3{
+            width: 50%;
+            margin: 0 auto;
+        }
+        .margin2{
+            margin: auto;
+            width: 500px;
+            height: 200px;
+            border: 1px solid olive;
+            background: olivedrab;
+            text-align: center;
+        }
+    </style>
+
+    <div class="wrap">JUST
+        <header class="header1">header1</header>
+    </div>
+    <style>
+        .wrap {
+            width: 1200px;
+            margin: 200px auto 0;
+            background: skyblue;
+        }
+
+        .header1 {
+            height: 100px;
+            padding: 30px;
+            border-bottom: 5px solid #000;
+            box-sizing: border-box;
+            /* box-sizng: content-box; */
+        }
+    </style>
+
+
+    <!-- just 쇼핑몰 -->
+    <div class="header">header 100px</div>
+    <div class="slide">slide 300px</div>
+    <div class="main">main 200px</div>
+    <div class="footer">footer 100px</div>
+    <style>
+        .wrap {
+            width: 1200px;
+            margin: 200px auto 0;
+            background: skyblue;
+        }
+
+        .header {
+            height: 100px;
+            background: #eee;
+            margin: 0 auto;
+            border-bottom: black;
+        }
+
+        .slide {
+            height: 300px;
+            padding-top
+        }
+
+        .main {
+            width: 90px;
+            height: 180px;
+            margin: 20px auto;
+            padding-top: 70px
+            border: 5px solid palegreen
+        }
+
+        .footer {
+            height: 100px;
+            padding-top: 
+        }
+    </style>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
