@@ -25,6 +25,22 @@
     margin: auto;
     /* background: lightcyan; */
 }
+@media screen and (max-width: 980px) {
+    .wrap {
+        padding: 0 30px;
+    }
+}
+    /* 모바일 430px로 설정했지만, 웹화면에서도 430px로 놓고 작업하면
+        나중에 기기 스크린이 더 작아졌을 때 깨질 수 있음
+            >> 좀 더 작게 두고 보면서 하기 */
+    /* 타블렛 바로 아래에 모바일 작업하기
+       (위에서부터 상속이 돼서 내려오기 때문) */
+@media screen and (max-width: 430px) {
+    .wrap {
+        padding: 0 15px;
+    }
+}
+
 .wrap header {
     display: flex;
     justify-content: space-between;
@@ -77,12 +93,12 @@
     display: block;
     padding: 3px 0;
 }
+#gnb .depth1 > li > a {
+    white-space: ;
+}
 
 /* tablet */
 @media screen and (max-width: 980px) {
-    .wrap {
-        padding: 30px;
-    }
     #header {
         height: auto;
         flex-direction: column
@@ -94,6 +110,28 @@
     }
     #gnb .depth1 > li > a {
         height: 50px;
+    }
+    #gnb .depth2 {
+        top: 50px;
+    }
+}
+/* mobile */
+@media screen and (max-width: 430px) {
+    #header {
+        height: auto;
+        flex-direction: column
+    }
+    #logo a {
+        height: auto;
+        padding: 20px 0 ;
+        justify-content: center;
+    }
+    #gnb .depth1 > li > a {
+        padding: 0 20px;
+    }
+    #gnb {
+        overflow-x: auto;
+        width: 100%;
     }
 }
 
@@ -205,9 +243,28 @@
         width: calc(100% / 2 - 10px);
     }
 }
+@media screen and (max-width: 430px) {
+    #main {
+        display: block
+    }
+    .sec-bnr {
+        width: 100%;
+    }
+    .sec-bnr img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .sec-goto {
+        width: 100%
+    }
+    .sec-goto ul li {
+    }
+}
 
 #footer {
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
     height: 100px;
