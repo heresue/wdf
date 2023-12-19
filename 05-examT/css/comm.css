@@ -1,7 +1,23 @@
+/* 전역 변수 설정 (전체영역) */
+:root {
+    --default: #222328;
+    --primary: red; /* 주조색 */
+    --whtie: #eee;
+    --black: #000;
+     
+    --widthWrap: 1200px;
+    --minHeight: calc(100vh - var(--hdHeight) - var(ftHeight) - 100px - 300px);
+    --hdHeigt: 100px;
+    --ftHeight: 100px;
+    --slideHeight: 300px;
+}
+
+
+
 /* reset */
 * {
     margin: 0;
-    color: #222328;
+    color: var(--default);
     padding: 0;
     line-height: 1.5;
     text-decoration: none;
@@ -93,9 +109,9 @@
     display: block;
     padding: 3px 0;
 }
-#gnb .depth1 > li > a {
+/* ???????? #gnb .depth1 > li > a {
     white-space: ;
-}
+} */
 
 /* tablet */
 @media screen and (max-width: 980px) {
@@ -161,6 +177,7 @@
     justify-content: space-between;
     gap: 20px;
     height: 200px;
+    min-height: var(--minHeight);
 }
 .sec-g {
     /* width: 33.333%; */
@@ -310,7 +327,7 @@
     border-radius: 20px;
     border: 1px solid #999;
     text-align: center;
-    background-color: #fff;
+    background-color: var(--white);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -330,7 +347,7 @@
     border-radius: 50%;
     /* 동그라미 값: 정사각형에 border-radius 50% */
     border: none;
-    color: #fff;
+    color: var(--white);
 }
 
 .modal .btn-close::after {
@@ -341,7 +358,16 @@
 }
 
 .modal i {
-    color: #fff;
+    color: var(--white);
     font-size: 2rem;
 }
+
+/* 실제 코딩할 때 배경에 시안 깔아놓고 하기 */
+/* body {
+    background: url(../images/slide1.png) no-repeat 0 0;
+}
+.wrap {
+    opacity: 0.7;
+} */
+
 
