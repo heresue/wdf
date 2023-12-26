@@ -11,6 +11,16 @@
         <script defer src="./js/comm.js"></script>
     </head>
     <body>
+        <!--시험 주의사항
+            **공개도면 요구사항들 잘 체크하기**
+            **기술적 준수사항**
+            1. 전체 용량 체크 (초과시 실격)
+                - 제공된 이미지의 크기, 용량, dpi 확인. 크기가 큰 경우 넣을 때 줄여서 넣어야 함
+            2. html5 기준: !doctype / charset utf-8 확인
+            3. 와이어프레임 영역 안에서 사이즈 잘 맞게
+            4. 이미지 슬라이드 방향 확인
+            5. 시험때는 인터넷 연결이 안되기 때문에 스와이퍼 사용 불가 애니메이션으로 넣어주면 된다 (슬라이드는 필수)
+            6. 시험장 도착시 vscode/포토샵 등 프로그램 잘 작동하는지, 이미지/폰트 등 자료 확인-->
         <div class="wrap">
             <header id="header">
                 <h1 id="logo">
@@ -24,6 +34,8 @@
                                 <li><a href="#">블라우스</a></li>
                                 <li><a href="#">티</a></li>
                                 <li><a href="#">셔츠</a></li>
+                                <li><a href="#">니트</a></li>
+                                <li><a href="#">니트</a></li>
                                 <li><a href="#">니트</a></li>
                             </ul>
                         </li>
@@ -58,37 +70,9 @@
                 </nav>
             </header>
             <!-- Slider main container -->
-            <div class="swiper slide-intro">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide"><img src="./images/slide1.png" alt=""></div>
-                    <div class="swiper-slide"><img src="./images/slide2.png" alt=""></div>
-                    <div class="swiper-slide"><img src="./images/slide3.png" alt=""></div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    ...
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-                <!-- If we need scrollbar -->
-                <!-- <div class="swiper-scrollbar"></div> -->
-            </div>
-
-            <!-- <div class="slide">
-                <ul>
+            <div class="slide">
+                <ul class="list-slide">
+                    <!-- ul 클래스 네임은 보통 list로 시작(리스트니까) -->
                     <li>
                         <a href="#">
                             <img src="./images/slide1.png" alt="이미지 설명" />
@@ -105,7 +89,7 @@
                         </a>
                     </li>
                 </ul>
-            </div> -->
+            </div>
             <main id="main">
                 <!-- 공지사항 섹션 -->
                 <section class="sec-g sec-bbs">

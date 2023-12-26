@@ -10,8 +10,10 @@
     --hdHeigt: 100px;
     --ftHeight: 100px;
     --slideHeight: 300px;
-}
 
+    /* swiper */
+    --swiper-theme-color: #00ff97;
+}
 
 
 /* reset */
@@ -21,7 +23,7 @@
     padding: 0;
     line-height: 1.5;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
     box-sizing: border-box;
     list-style: none;
 }
@@ -69,21 +71,34 @@
     align-items: center;
     width: 200px;
     height: 40px;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 #gnb .depth1 {
     display: flex;
     /* gap: 50px; */
 }
+
+#gnb .depth1 > li > a:hover {
+    background: lightblue;
+}
+
+
 #gnb .depth1 li {
     position: relative;
 }
 /* #gnb .depth1:hover .depth2 {}  전체 메뉴 보이게 */
+/* 마우스 오버시 전체 메뉴 보이게 */
+/* #gnb .depth1:hover .depth2 { */
 
-/* 아래는 각각의 메뉴 보이게 */
+/* (li에) 마우스 오버시 개별 메뉴 보이게*/
 #gnb .depth1 li:hover .depth2 {
-    display: block;
+    /* display: block; (display none을 없애줬기때문에 없어도됨)*/
+    opacity: 1;
+    visibility: visible;
+    max-height: 300px;
+    padding: 20px 0;
 }
+
 
 #gnb .depth1 > li > a {
     display: flex;
@@ -94,7 +109,14 @@
 }
 
 #gnb .depth2 {
-    display: none;
+    /* display:none은 transition안된다 */
+    /* display: none; */
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    max-height: 0px;
+    visibility: hidden;
+    transition: all 0.3s;
     background: yellow;
     position: absolute;
     top: 100px;
@@ -112,6 +134,11 @@
 /* ???????? #gnb .depth1 > li > a {
     white-space: ;
 } */
+
+#gnb .depth2 a:hover {
+    color: red;
+    font-weight: bold;
+}
 
 /* tablet */
 @media screen and (max-width: 980px) {
@@ -162,7 +189,32 @@
     position: absolute;
     top: 0;
     left: 0;
+    animation: ani-slide 10s infinite linear;
 }
+@keyframes ani-slide {
+    0% {
+        left: 0;
+    }
+    30% {
+        left: 0;
+    }
+    32% {
+        left: -100%;
+    }
+    62% {
+        left: -100%;
+    }
+    64% {
+        left: -200%;
+    }
+    96% {
+        left: -200%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
 .slide ul a {
     /* display: block; */
     /* background: red; */
@@ -171,6 +223,8 @@
     display: block;
     /* 이미지는 inline 요소라 space가 적용됨 */
 }
+
+
 
 #main {
     display: flex;
@@ -189,7 +243,7 @@
 }
 .sec-g .sec-tit {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 /* bbs */
@@ -333,7 +387,7 @@
 
 .modal .modal-hd {
     margin-bottom: 30px;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 

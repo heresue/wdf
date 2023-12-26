@@ -2,8 +2,8 @@ var swiper = new Swiper('.slide-intro', {
     // Optional parameters
     // direction: 'vertical',
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 30,
+    slidesPerView: 1,
+    spaceBetween: 0,
 
     // If we need pagination
     pagination: {
