@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: ddd;}
+/* 마우스오버했을때 active 클래스가 붙은 애는 #ddd 적용하지마라 */
+</style>
+</head>
+<body>
+
+<h2>Active and Hoverable Pagination</h2>
+
+<p>Move the mouse over the numbers.</p>
+
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+
+</body>
+</html>
+
+<!-- ------------------- -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.pagination {
+  display: inline-block;
+}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+</head>
+<body>
+<h2>Active and Hoverable Pagination</h2>
+<p>Move the mouse over the numbers.</p>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">
+  2 <span class="blind">현재 페이지<span>
+  </a>
+  <!-- !웹접근성! 현재 페이지 꼭 적어줘야함 -->
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+</body>
+</html>
+
+<!-- ------------------ -->
+<!-- css 반응형 - RWD이미지 - html picture 요소 -->
+<!-- 창 크기 변화에 따라 이미지가 바뀜
+        > pc -> m 바뀔때 사용. pc버전 이미지를 그대로 사용하면, 로딩이 오래걸리기 때문에
+            m버전 이미지를 따로 만들어서 넣어준다 -->
+<body>
+
+    <picture>
+      <source srcset="img_smallflower.jpg" media="(max-width: 400px)">
+      <source srcset="img_flowers.jpg">
+      <img src="img_flowers.jpg" alt="Flowers" style="width:auto;">
+    </picture>
+    
+    <p>Resize the browser width and the background image will change at 400px.</p>
+    
+    </body>
+    </html>
+
+
+

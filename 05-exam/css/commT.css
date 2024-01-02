@@ -215,7 +215,7 @@
     height: 100px;
     background-color: #000;
     border-radius: 50%;
-    /* 동그라미 값: 정사각형에 border-radius 50% */\
+    /* 동그라미 값: 정사각형에 border-radius 50% */
     border: none;
     color: #fff;
 }

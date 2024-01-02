@@ -1,0 +1,116 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/reseter.min.css");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.g1-1 {
+  animation: rotate1 2s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(2);
+  }
+  12% {
+    transform: scale(1);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  90% {
+    transform: rotate(359deg);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.rotate-infinite {
+  fill: mediumspringgreen !important;
+  animation: rotation 5s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+.eye1 {
+  position: relative;
+  z-index: 2;
+  fill: red !important;
+  animation: scale 5s infinite linear;
+  transform-box: fill-box;
+  transform-origin: 50%;
+}
+
+@keyframes scale {
+  0% {
+    transform: scaleY(1);
+  }
+  5% {
+    transform: scaleY(0);
+  }
+  10% {
+    transform: scaleY(1);
+  }
+}
+.eye2 {
+  position: relative;
+  z-index: 1;
+}
+
+.cls-2 {
+  transform: translate(-70px, -90px);
+}
+
+.cls-8 {
+  animation: rotation 5s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.cls-3 {
+  animation: rotation 10s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.cls-3-op {
+  animation: rotation 20s infinite linear;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.cls-10-op {
+  animation: rotation2 1s linear;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes rotation2 {
+  0% {
+    transform: translateY(-200px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  95% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=comm.css.map */

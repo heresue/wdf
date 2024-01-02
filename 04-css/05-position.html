@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>position</title>
+        <style>
+            .container {
+                position: relative;
+                background: lightblue;
+                /* height: 200vh; */
+            }
+            .box {
+                width: 200px;
+                height: 200px;
+                background: greenyellow;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>position</h1>
+        <div class="container relative">
+            <div class="inner">
+                <!-- fixed의 기준 : body -->
+                <!-- <div class="fixed">fixed</div> -->
+                <div class="box sta">static</div>
+                <div class="box rel1">relative1</div>
+                <div class="box rel2">relative2</div>
+                <div class="box rel3">relative3</div>
+                <!-- relative : 나 자신이 기준 -->
+                <!-- 기준을 절대 값으로 사용하지 마삼 -->
+                <style>
+                    .rel1,
+                    .rel2,
+                    .rel3 {
+                        position: relative;
+                    }
+                    /* .rel2 {
+                    right: 0;
+                    top: 400px;
+                } */
+                </style>
+                <div class="box abs1">absolute1</div>
+                <div class="box-rel">
+                    <div class="box abs2">absolute2</div>
+                    <div class="box abs3">absolute3</div>
+                </div>
+            </div>
+            <style>
+                .inner {
+                    position: relative;
+                }
+                .box-rel {
+                    position: absolute;
+                    bottom: 50px;
+                    right: 0;
+                    width: 500px;
+                    height: 500px;
+                    background: blueviolet;
+                }
+                /* absolute : 절대값으로 위치 지정 */
+                /* 기준은 나와 가장 가까운 부모 */
+                .abs1 {
+                    position: absolute;
+                    top: 150px;
+                    right: 0;
+                    z-index: 1;
+                    background: blue;
+                }
+                .abs2 {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+                .abs3 {
+                    position: absolute;
+                    top: 100px;
+                    left: -120px;
+                }
+            </style>
+
+            <style>
+                .fixed {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    z-index: 1000;
+                    /* right: 0;
+                    bottom: 0; */
+                    width: 100%;
+                    height: 200px;
+                    background: #00fff7;
+                }
+            </style>
+
+            <div class="sticky-wrap">
+                <div class="rel">
+                    <div class="sticky sticky1">sticky</div>
+                </div>
+                <div class="rel">
+                    <div class="sticky sticky1">sticky</div>
+                </div>
+                <div class="rel">
+                    <div class="sticky sticky1">sticky</div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .sta {
+                position: static;
+            }
+            .rel {
+                position: relative;
+                height: 100vh;
+                background: lightsalmon;
+                border: 5px solid yellow;
+            }
+            .sticky {
+                position: sticky;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 200px;
+                background: blue;
+            }
+        </style>
+
+        <h2>가운데 정렬</h2>
+        <div class="center">
+            <div class="item">가운데 정렬</div>
+        </div>
+        <style>
+            h2 {
+                width: 50%;
+                margin: auto;
+                text-align: center;
+                background: red;
+            }
+            .center {
+                position: relative;
+                z-index: 100;
+                height: 500px;
+                margin-bottom: 500px;
+                background: lawngreen;
+            }
+            .center .item {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 200px;
+                height: 200px;
+                /* margin: -100px 0 0 -100px; */
+                transform: translate(-50%, -50%);
+                background: wheat;
+                text-align: center;
+                line-height: 200px;
+            }
+        </style>
+    </body>
+</html>
