@@ -1,0 +1,469 @@
+/* 전역 변수 설정 (전체영역) */
+:root {
+    --default: #222328;
+    --primary: red; /* 주조색 */
+    --whtie: #eee;
+    --black: #000;
+     
+    --widthWrap: 1200px;
+    --minHeight: calc(100vh - var(--hdHeight) - var(ftHeight) - 100px - 300px);
+    --hdHeigt: 100px;
+    --ftHeight: 100px;
+    --slideHeight: 300px;
+
+    /* swiper */
+    --swiper-theme-color: #00ff97;
+}
+
+
+/* reset */
+* {
+    margin: 0;
+    color: var(--default);
+    padding: 0;
+    line-height: 1.5;
+    text-decoration: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+/* 공통 */
+/* 시각장애인에겐 들리고 일반인에겐 보이지 않는 텍스트 */
+.blind {
+    position: absolute;
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.wrap {
+    /* 최대 1200px 까지 */
+    max-width: 1200px;
+    margin: auto;
+    /* background: lightcyan; */
+}
+@media screen and (max-width: 980px) {
+    .wrap {
+        padding: 0 30px;
+    }
+}
+    /* 모바일 430px로 설정했지만, 웹화면에서도 430px로 놓고 작업하면
+        나중에 기기 스크린이 더 작아졌을 때 깨질 수 있음
+            >> 좀 더 작게 두고 보면서 하기 */
+    /* 타블렛 바로 아래에 모바일 작업하기
+       (위에서부터 상속이 돼서 내려오기 때문) */
+@media screen and (max-width: 430px) {
+    .wrap {
+        padding: 0 15px;
+    }
+}
+
+.wrap header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    /* background: lightpink; */
+}
+#logo a {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    font-size: 1.25rem;
+}
+#gnb .depth1 {
+    display: flex;
+    /* gap: 50px; */
+}
+
+#gnb .depth1 > li > a:hover {
+    background: lightblue;
+}
+
+
+#gnb .depth1 li {
+    position: relative;
+}
+/* #gnb .depth1:hover .depth2 {}  전체 메뉴 보이게 */
+/* 마우스 오버시 전체 메뉴 보이게 */
+/* #gnb .depth1:hover .depth2 { */
+
+/* (li에) 마우스 오버시 개별 메뉴 보이게*/
+#gnb .depth1 li:hover .depth2 {
+    /* display: block; (display none을 없애줬기때문에 없어도됨)*/
+    opacity: 1;
+    visibility: visible;
+    max-height: 300px;
+    padding: 20px 0;
+}
+
+
+#gnb .depth1 > li > a {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 50px;
+    /* background: red; */
+}
+
+#gnb .depth2 {
+    /* display:none은 transition안된다 */
+    /* display: none; */
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    max-height: 0px;
+    visibility: hidden;
+    transition: all 0.3s;
+    background: yellow;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* width: 100%; */
+    padding: 20px 0;
+    text-align: center;
+}
+#gnb .depth2 a {
+    display: block;
+    padding: 3px 0;
+}
+/* ???????? #gnb .depth1 > li > a {
+    white-space: ;
+} */
+
+/* js로 구현했기 때문에 지워준다 */
+/* #gnb .depth2 a:hover {
+    color: red;
+    font-weight: bold;
+} */
+
+
+/* tablet */
+@media screen and (max-width: 980px) {
+    #header {
+        height: auto;
+        flex-direction: column
+    }
+    #logo a {
+        height: auto;
+        padding: 20px 0 ;
+        justify-content: center;
+    }
+    #gnb .depth1 > li > a {
+        height: 50px;
+    }
+    #gnb .depth2 {
+        top: 50px;
+    }
+}
+/* mobile */
+@media screen and (max-width: 430px) {
+    #header {
+        height: auto;
+        flex-direction: column
+    }
+    #logo a {
+        height: auto;
+        padding: 20px 0 ;
+        justify-content: center;
+    }
+    #gnb .depth1 > li > a {
+        padding: 0 20px;
+    }
+    #gnb {
+        overflow-x: auto;
+        width: 100%;
+    }
+}
+
+
+.slide {
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+.slide ul {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.slide ul a {
+    /* display: block; */
+    /* background: red; */
+}
+.slide ul img {
+    display: block;
+    /* 이미지는 inline 요소라 space가 적용됨 */
+}
+/* *******block요소는 값 안넣어도 크기가 기본 100%*** */
+
+
+#main {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 200px;
+    min-height: var(--minHeight);
+}
+.tabs,
+.sec-bnr,
+.sec-goto {
+    /* width: 33.333%; */
+    flex-grow: 1;
+    /* 1 : true (참), 0 : false(거짓) */
+    flex-basis: 0;
+    padding: 10px 0;
+    /* border: 1px solid #000; */
+}
+.sec-g .sec-tit {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+/* bbs */
+.sec-bbs .list-bbs li {
+    display: flex;
+    align-items: center;
+}
+.sec-bbs .list-bbs li::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+    background: red;
+}
+.sec-bbs .list-bbs a {
+    display: block;
+    /* padding: 5px 0; */
+}
+
+.sec-goto .sec-tit,
+.sec-bnr .sec-tit {
+    margin-bottom: 0;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 0;
+}
+.sec-gallery .list-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+/* tabs */
+.tabs {
+    display: flex;
+    position: relative;
+}
+.tabs .sec-g {
+    width: 50%;
+}
+.tabs .tab-cont {
+    display: none;
+}
+/* 비활성화된 tab 디자인 */
+.tabs .sec-tit {
+    padding: 5px 0 3px;
+    background: #eee;
+    text-align: center;
+}
+/* 활성화된 tab 디자인 */
+.tabs .active .sec-tit {
+    /* tabs밑에 active라는 클래스가 들어갔을때 sec-tit */
+    background: lightpink;
+    color: #fff;
+}
+.tabs .tab-cont {
+    /* display: none; */
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 10px;
+}
+.tabs .active .tab-cont {
+    display: flex;
+}
+
+.tabs .list-bbs,
+.tabs .list-gallery {
+    /* display: none; */
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 10px;
+}
+
+
+.sec-goto .list-goto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 100%;
+}
+.sec-goto .list-goto li {
+    width: 48%;
+    height: 48%;
+    background: yellow;
+}
+.sec-goto .list-goto a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    line-height: 85px;
+}
+
+/* 실무에서는 섹션별로 미디어 쿼리를 잡아줌 */
+/* tablet 버전은 width값은 %로 넣어줌 (높이값은 px) */
+@media screen and (max-width: 980px) {
+    #main {
+        flex-wrap: wrap;
+        gap: 0;
+        height: auto;
+    }
+    .sec-g {
+        flex-basis: auto;
+        flex-grow: 0;
+    }
+    .sec-bbs {
+        width: 100%;
+    }
+    .sec-bnr,
+    .sec-goto {
+        /* gap 20px 빼고 width를 48%로 조정
+            -or calc로 계산해서 빼줄수도 있음 (정확)
+            -or gap: 0, justfied content 설정*/
+        width: calc(100% / 2 - 10px);
+    }
+}
+@media screen and (max-width: 430px) {
+    #main {
+        display: block
+    }
+    .sec-bnr {
+        width: 100%;
+    }
+    .sec-bnr img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .sec-goto {
+        width: 100%
+    }
+    .sec-goto ul li {
+    }
+}
+
+#footer {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    border-top: 1px solid #eee;
+    /* background: lawngreen; */
+}
+
+#footer .logo img {
+    filter: grayscale(100%);
+}
+/* filter는 img태그만 적용됨 (bgi는 X) */
+
+@media screen and (max-width: 980px) {
+    #footer {
+        display: block;
+        height: auto;
+        padding: 20px 0;
+        text-align: center;
+        background-color: #eee;
+    }
+}
+
+.swiper {
+    height: 300px;
+}
+
+.dimmed {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    /* width: 100%;
+    height: 100%; */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    margin: -150px 0 0 -250px;
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid #999;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal .modal-hd {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal .btn-close {
+    position: absolute;
+    top: -32px;
+    right: -32px;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 50%;
+    /* 동그라미 값: 정사각형에 border-radius 50% */
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    /*  커서는 기본으로 설정되어 있지 않기 때문에 reset에서 설정해줘야함*/
+}
+
+.modal .btn-close::after {
+    content: '\f00d';
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.modal i {
+    color: var(--white);
+    font-size: 2rem;
+}
+
+/* 실제 코딩할 때 배경에 시안 깔아놓고 하기 */
+/* body {
+    background: url(../images/slide1.png) no-repeat 0 0;
+}
+.wrap {
+    opacity: 0.7;
+} */
+
+
