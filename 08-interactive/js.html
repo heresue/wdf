@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling - JS</title>
+    <style>
+    .section {
+    height: 150vh;
+    position: relative;
+    overflow: hidden;
+    }
+
+    .parallax-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: translateZ(0);
+    }
+
+    .background {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    }
+    .background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.3;
+    }
+
+    .circle {
+    top: 0;
+    left: -300px;
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+    z-index: 3;
+    opacity: 0.2;
+    border-radius: 50%;
+    }
+
+    .square {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 0px;
+    height: 300px;
+    background-color: lightsalmon;
+    z-index: 3;
+    opacity: 0.3;
+    }
+    .square
+
+    .title {
+    position: absolute;
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    top: 50%; /* 초기 위치 조정 */
+    }
+
+    .extra-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 높이를 충분히 주어 스크롤 생성 */
+    background-color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 3rem;
+    color: #fff;
+    }
+    </style>
+</head>
+<body>
+    <div class="extra-content">
+        <p>Parallax Scrolling (JS)</p>
+    </div>
+
+    <div class="section">
+        <div class="parallax-element background"></div>  
+        <div class="parallax-element square"></div>
+        <div class="parallax-element circle"></div>
+        <strong class="parallax-element title">글씨는 스크롤이 느림</strong>
+    </div>
+    
+    <div class="section">
+        <div class="parallax-element background"></div>  
+        <div class="parallax-element square"></div>
+        <div class="parallax-element circle"></div>
+        <strong class="parallax-element title">글씨는 스크롤이 느림</strong>
+    </div>
+    
+    <div class="extra-content">
+      <p>Parallax Scrolling</p>
+    </div>
+    
+    <script>
+        // 윈도우에 스크롤 이벤트를 걸어줌
+        window.addEventListener("scroll", function () {
+            const section = document.querySelectorAll(".section");
+            // querySelector: 첫번째 오브젝트만 선택
+            // querySelectorAll: 모든 오브젝트 선택
+
+            // forEach : 각 섹션 반복
+            section.forEach(function (section) {
+                section.style.border = '10px solid red';
+
+                // 변수 설정
+                // 섹션의 위치와 크기 정보를 가져오는 메서드
+                let bounds = section.getBoundingClientRect();
+                const background = section.querySelector(".background");
+                const circle = section.querySelector(".circle");
+                const square = section.querySelector(".square");
+                const title = section.querySelector(".title");
+
+                // console.log로 값 확인하기 (2가지 표기법 사용 가능("" or ``))
+                // console.log("scroll Y: " + scrolled) : ""사용 (과거 표기법)
+                let scrolled = window.scrollY;
+                console.log(`scrollY : ${scrolled}`);
+                console.log(`bounds.top : ${bounds.top}`);
+                console.log(`bounds.bottom : ${bounds.bottom}`);
+                console.log(`window.innerHeight : ${window.innerHeight}`);
+                
+
+                // if (조건문) {실행문}
+                // if ( A && B ) -> '&&': a, b 모두가 참일 경우
+                // 섹션이 뷰포트 내에 있을 경우
+                if (bounds.top < window.innerHeight && bounds.bottom >= 0) {
+
+                    // 섹션의 시작점에서 스크롤 된 거리를 계산
+                    let sectionScrolled = window.pageYOffset - section.offsetTop;
+                    // title.style.background = "red"
+                    background.style.transform = `translateY(${sectionScrolled * 0.8}px)`;
+                    title.style.transform = `translateY(${sectionScrolled * 0.3}px)`;
+                    circle.style.transform = `translate(${sectionScrolled * 0.5}px, ${sectionScrolled * 0.2}px)`;
+                    square.style.width = `${sectionScrolled * 0.9}px`;
+                }
+                })
+            
+
+
+        })
+    </script>
+</body>
+</html>
