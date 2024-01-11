@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+        <style>
+            .sec-g {
+                border: 5px solid grey;
+                display: flex;
+                /* align-items: center; */
+                justify-content: space-around;
+                min-height: 50vh;
+                flex-direction: column;
+            }
+            .box {
+                width: 50px;
+                height: 50px;
+                border-radius: 3px;
+            }
+            .green {
+                background: greenyellow;
+                transform-origin: 0 0; /* 엘리멘트의 기준점을 엘리먼트의 (0, 0)로 바꿔줌 (디폴트값은 엘리먼트의 중심)*/
+            }
+            .purple {
+                background: purple;
+            }
+            .blue {
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sec-g sec-basic">
+            <div class="box green"></div>
+            <div class="box purple"></div>
+            <div class="box blue"></div>
+        </div>
+        <div class="sec-g sec-timeline">
+            <div class="box green"></div>
+            <div class="box purple"></div>
+            <div class="box blue"></div>
+        </div>
+
+        <script>
+            // gsap 구문
+            // https://gsap.com/docs/v3/GSAP/CorePlugins/CSS#css-variables : Quick referenec 표 참고 (속성값)
+            // gsap.to('엘리먼트', 시간, 옵션)
+            // 시간은 뒤 {} 안에 넣어도 됨
+            // 1개: key, value
+            // 2개 이상: {k : v, k : v} (1개일 때도 사용해도 됨)
+            gsap.to('.sec-basic .green', 2, {rotation: 360, x: 424, scale: 3})
+            gsap.from('.sec-basic .purple', 2, {rotation: -360, x: 300, y: 300, scale: 3})
+            gsap.fromTo('.sec-basic .blue', 2, {x: 300, y: -600, scale: 3}, {rotation: -360, x: 300, y: 53, scale: 1})
+
+
+            // 타임라인
+            // gsap의 timeline을 변수로 할당
+            const tl = gsap.timeline();
+
+            tl.to('.sec-timeline .green', 1, {x: 100})
+            .to('.sec-timeline .purple', 1, {rotation: 360, x: 100, y: 200})
+            .to('.sec-timeline .blue', 1, {x: 300, y:-150, scale: 3, rotation: 360})
+
+        </script>
+    </body>
+</html>
