@@ -150,11 +150,11 @@
             gsap.registerPlugin(ScrollTrigger)
 
             const hd = document.querySelector('#header')
-            const btnTop = document.querySelector('.btn-top')
+            const topBtn = document.querySelector('.btn-top')
             const btnRightHidden = -250
 
 
-            // gsap.set (btnTop, {
+            // gsap.set (topBtn, {
             //     right: btnRightHidden,
             //     opacity: 0,
             // })
@@ -203,6 +203,27 @@
                 }
             }
             
+
+            // btnTop 클릭시
+
+                // a: 링크, btn: 동적처리(event 발생) -> 역할에 따라 맞춰서 넣어줌.
+                // [top]은 위로 올려주는 동적처리 기능을 하지만, a태그로 만들었음. 바꾸기 애매하거나 하는 경우,
+                //   해결1) preventDefault()를 이용하여 이벤트가 발생하지 않게 한다.
+                //   해결2) <a href="javascript:void()">
+                //          : a태그의 href 속성에 사용. '링크는 실행되지 말고 js만 실행해라'
+
+            btnTop.addEventListener('click', function(event) {
+                //  (event): click하면 #링크로 연결되는 event
+
+
+                // 링크 이동 방지 
+                event.preventDefault();
+                // 화면을 맨 위로 이동
+                gsap.to(window, {
+                    scrollTo: 0,
+                    duration: 1,
+                })
+            })
 
             gsap.to('.circle1', )
 
