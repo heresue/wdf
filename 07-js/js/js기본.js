@@ -43,6 +43,8 @@ console.log((d + e).toFixed(1)) // 0.3 (문자)
 // 3. typeof : 문자열인지 숫자열인지 보여줌
 console.log(typeof (d + e).toFixed(1)) // string (문자)
 
+// typeof로 확인하는 이유: 문자, 숫자 중 어떤걸 넣을지 선택해야 하는 명령어가 있음
+
 // 4. Number() : 숫자로 반환
 console.log(Number((d + e).toFixed(1)))
 console.log(typeof Number((d + e).toFixed(1))) // number (숫자)
@@ -89,9 +91,23 @@ height = 180        // height값 할당
 console.log(height) // 180 출력
 
 
+// null, undefined 예시 (블로그) //
+const example = {
+    name: 'Kim',
+    age: 20,
+    height: 170,
+    email: null
+}
+
+console.log(example.name, example.age, example.height)  // Kim 20 170
+console.log(example.weight)                             // undefined
+console.log(example.email)                              // null : 이메일이 없습니다.
+
+
 
 //// Array (배열) ////
-// 여러개의 값을 순차적으로 나열한 자료형
+// [value, value, value]
+// 여러개의 값(value)을 순차적으로 나열한 자료형 (순서가 있는 집합)
 // 배열은 순서가 있음! 몇번째인지 순서를 아는것이 중요하다
 
 const animals = ["강아지", "고양이", "토끼"]
@@ -103,3 +119,133 @@ console.log(animals.length) // 3
 
 // ★ 배열의 마지막 요소를 가져오기
 console.log(animals[animals.length - 1]) // 토끼
+
+
+//// object (객체) ////
+// {key: value, key: value, key: value}
+// 이름(key)과 값(value)으로 구성된 속성(property)을 저장한 자료형 (순서가 없는 집합)
+
+const user = {
+    name: '가을',
+    age: 4,
+}
+
+console.log(user)
+console.log(user.name, user.age)
+
+// 가을이의 나이는 2살 입니다.
+console.log(user.name + "이의 나이는 " + user.age +"살 입니다.")    // 구 표기 방식
+console.log(`${user.name}이의 나이는 ${user.age}살 입니다."`)       // 웹표준화 이후 새로운 방식 (백틱)
+
+
+
+// 점 표기법
+// 객체의 키가 유효한 이름인 경우에만 사용 가능 (주로 사용하는 표기법)
+console.log(user.name, user.age)
+
+// 대괄호 표기법
+// 변수를 키로 사용할 때 사용 가능
+console.log(user['name'])
+
+const userA = {
+    name: 'Kim',
+    age: 30,
+}
+
+const userB = {
+    name: 'Lee',
+    age: 10,
+    parent: userA
+}
+
+console.log(userB)                      // userB의 이름: Lee
+console.log(userB.parent.name)          // userB의 부모 이름: Kim
+console.log(userB['parent']['name'])    // userB의 부모 이름: Kim (대괄호 표기법)
+
+
+//// 배열에 객체 넣기 ////
+// [참고] https://codesandbox.io/p/sandbox/table-props-baeyeol-q9l69c?file=%2Fsrc%2FApp.js%3A13%2C1
+
+const users = [userA, userB]
+console.log(users)
+console.log(users[0])
+console.log(users[0].name)
+
+
+
+//// function(함수) ////
+// function 함수이름(매개변수) {실행문}
+// 특정 코드를 하나의 명령으로 실행할 수 있게 해주는 자료형
+
+// 함수 선언
+function printHello() {
+    console.log('안녕하세요')
+}
+// 함수 호출
+printHello()    // ★괄호를 꼭! 붙여줘야 한다.
+
+
+// 함수 () 유무에 따른 차이
+console.log(printHello)     // ()가 없으면 함수 자체를 출력
+console.log(printHello())   // ()를 넣어줘야 함수값이 출력됨
+
+// ex
+function getNumber() {
+    return 123
+}
+
+console.log(getNumber, typeof getNumber)        // 함수 자체를 출력, typeof: function
+console.log(getNumber(), typeof getNumber())    // 함수값이 출력, typeof: number
+
+// 단, 라이브러리/명렁어에 따라서 ()를 안쓰는 경우도 있다!
+// ex: throttle의 경우, 함수 뒤에 ()를 쓰지 않음
+
+
+//// Type Conversion (형 변환) ////
+// === 일치 연산자: 값, 형태 비교
+// ==  동등 연산자: 값만 비교
+
+const h = 1     // number
+const i = '1'   // string
+
+console.log(h===i)  // false (일치 연산자)
+console.log(h==i)   // true (동등 연산자)
+
+
+//// truthy & falsy ////
+// truthy: true 같은 것: falsy 외 모든 값
+// falsy: false 같은 것: false, 0, '', null, undefined, NaN(Not a Number)
+
+const j = true          // 참입니다.
+// const j = false      // 거짓입니다.
+// const j = 0          // 거짓입니다.
+// const j = ''         // 거짓입니다.
+// const j = null       // 거짓입니다.
+// const j = undefined  // 거짓입니다.
+
+if(j) {
+    console.log('참입니다.')
+} else {
+    console.log('거짓입니다.')
+}
+
+
+
+//// typeof: 데이터 타입 확인 ////
+console.log(typeof '123')           // string
+console.log(typeof 123)             // number
+console.log(typeof true)            // boolean
+console.log(typeof undefined)       // undefined
+console.log(typeof null)            // object
+console.log(typeof {})              // object
+console.log(typeof [])              // object
+console.log(typeof function(){})    // function
+
+// null, {}, []는 object로 나오기 때문에 구분하기 어려움
+//  : constructor를 통해 데이터 타입을 확인할 수 있음
+console.log([].constructor)         // Array
+console.log({}.constructor)         // Object
+console.log(null.constructor)       // error : null은 constructor가 없음
+
+// null 데이터 타입 확인 방법 (추천 방법)
+console.log(Object.prototype.toString.call(null).slice(8, -1)) // Null
