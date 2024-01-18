@@ -99,6 +99,7 @@ console.log(1 >= 1)     // true
 
 // 6. 논리 연산자 (Logical)
 // true, false 반환
+// AND(&&), OR(||)
 
 
 // AND 연산자 (a && b) //
@@ -116,9 +117,6 @@ console.log(1 && 0 && false)    // 0 (0을 먼저 만났기 때문에 0 반환 �
 console.log('a' && 'b' && '')   // ''
 console.log('a' && 'b' && 'c')  // c (모두가 참이라면, 마지막 데이터 반환)
 
-console.log('-----------------------------------')
-
-
 // 섹션의 top이 뷰포트 아래를 넘어왔을때 ~ 섹션의 botoom이 뷰포트 top에 왔을 때
 // (섹션이 뷰포트 안쪽으로 들어왔을 경우)
 // 스크롤트리거(글씨는 스크롤이 느림) 예제 때 활용했으니 다시 확인해보자
@@ -126,23 +124,104 @@ console.log('-----------------------------------')
 
 // OR 연산자 (a || b) //
 // a, b 둘 중 하나만 true이면, true 반환
-// 연산자를 기준으로 가장 먼저 만나는 "true 데이터" 반환
+// [!주의] 연산자를 기준으로 "가장 먼저 만나는 true 데이터" 반환
 
-console.log(true || true)   // true
-console.log(true || false)  // true
-console.log(false || false) // true
-
-// ** 주의 **
-// 연산자를 기준으로 가장 먼저 만나는 참 데이터가 반환된다.
+console.log(true || true)                       // true
+console.log(false || false)                     // true
 console.log(false || true)                      // true
-console.log(0 || 1)                             // 1
-console.log(false || 0 || {})                   // 빈 객체데이터는 참이기 때문에 {} 반환
-console.log(false || [] || null)                // 빈 배열은 참이기 때문에 [] 반환 후 종료
+console.log(1 || 0)                             // 1
+console.log(false || 0 || {})                   // {} (빈 객체데이터는 참이기 때문에 {} 반환)
+console.log('' || 0 || NaN)                     // NaN (모두가 false라면, 마지막 데이터 반환)
 console.log(function (){} || undefined || '')   // 함수 데이터는 참이기 때문에 f () {} 반환 후 종료
-console.log(false || 0 || NaN)                  // 모두가 거짓이라면 마지막 데이터가 반환
+
+
+
+//// 7. 병합 연산자 (Nullish Coalescing) ////
+// || 연산자와 비슷하다.
+// null 또는 undefined는 제외하고 반환
+
+console.log(0 || 5)             // 5
+console.log(0 ?? 5)             // 0 (0을 데이터 값으로 사용하는 Nullish 사용)
+console.log(null ?? undefined)  // undefined
+
+
+
+//// 8. 삼항 연산자 (Ternary) ////
+// 조건 ? 참일 때 반환되는 값 : 거짓일 때 반환되는 값
+
+console.log(1 < 2 ? '참' : '거짓')  // 참
+console.log(1 > 2 ? '참' : '거짓')  // 거짓
+
+// 리액트에서 정말 많이 쓰이는 연산자 (참고 https://odada.me/255)
+
+// 예제 1
+// if문 표현
+const p = 1
+if (p < 3) {
+    console.log('참!!')
+}else {
+    console.log('거짓!!')
+}
+// 삼항 연산자 표현
+console.log(p < 3 ? '참!!' : '거짓!!')
+
+// 예제2
+function isCat (name) {     // name: 매개변수
+    return (
+        name === '고양이' ? '고양이' : '고양이 아님'
+
+    ) // return에 두 줄 이상의 값이 들어가면 ()를 넣어준다.
+}
+// 함수 실행 (인수 '고양이'를 넣어줌)
+// isCat('고양이')
+console.log(isCat('고양이'))
+console.log(isCat('개'))
 
 
 
 
-// 7. 병합 연산자 (Nullish Coalescing)
+//// 9. 전개 연산자 (Spread) 연산자
+// ...을 사용하여 배열이나 객체를 펼칠 수 있다.
 
+
+// 배열의 전개 //
+const num1 = [1, 2, 3]
+const num2 = [4, 5, 6]
+
+console.log(num1.concat(num2))  // concat 매서드 사용
+console.log([...num1, ...num2])
+
+// 객체의 전개 //
+const dog = {
+    name: '멍멍이',
+    phone: '010-0000-0000',
+}
+const dogInfo = {
+    ...dog, // 기존 정보 불러옴
+    age: 2
+}
+console.log(dogInfo)
+
+// 함수의 전개 //
+// ...을 사용하여 파라미터(인수)를 전개할 수 있다.
+
+// 예제
+// sum 함수 선언
+// sum의 매개변수(a, b, c)는 이 안에서만 사용하는 것이기 때문에, 다른 함수에서 써도 괜찮음
+function sum(a, b, c) {
+    console.log(a + b + c)
+}
+
+// sum 함수 호출
+sum(1, 2, 3)    // 함수에서 console.log를 실행문에 입력했기 때문에 함수만 써줘도 출력된다.
+
+// 보통은 데이터가 배열, 객체에 쌓여있기 때문에 위처럼 예쁘게 넣을 수 없다.
+//  >> 전개 연산자를 사용해서, 배열을 파라미터(인수)로 전달하자
+const num3 = [5, 6, 7]
+const num4 = [8, 9, 10]
+
+sum(num3[0], num3[1], num3[2])
+sum(num4[0], num4[1], num4[2])
+// 전개 연산자를 사용하면,
+sum(...num3)
+sum(...num4)
