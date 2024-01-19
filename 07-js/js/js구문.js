@@ -207,7 +207,7 @@ console.log(getPrice('바지'))
 console.log(getPrice('모자'))
 
 // 위 방법으로 해도 되지만 너무 길어짐
-//  >> return을 활용해서 다시 해보자!
+//  >> return을 활용해서 다시 해보자! (권장★)
 function getPrice2(item) {
     switch (item) {
         case '패딩':
@@ -306,8 +306,8 @@ const a2 = animals[1]
 const a3 = animals[2]
 console.log(a1, a2, a3)
 
-console.log('< animals 배열 (for) >')
 // 방법 3 (for문 사용)
+console.log('< animals 배열 (for) >')
 for (let i = 0; i <= 2; i++) {
     console.log(animals[i])
 }
@@ -325,7 +325,7 @@ for (let i = 0; i < animals.length; i++) {
 
 
 // 2) for of문
-// for (변수 of 배열) {실행될 코드}
+// for (변수 of 배열[]) {실행될 코드}
 
 // 예제)
 console.log('< for of >')
@@ -362,3 +362,59 @@ for (let user of users) {
 }
 
 // 역순으로 출력하려면?
+
+
+
+// 2) for in문
+// for (변수 in 객체{}) {실행될 코드}
+
+const user = {
+    name: '겨울',
+    age: 2
+}
+
+console.log(user.name, user.age)        // 점 표기법
+console.log(user['name'], user['age'])  // 대괄호 표기법
+
+for (let key in user) {
+    console.log(key)
+}
+
+// 키 값이 아닌 데이터 값(겨울, 2) 를 출력하고 싶다면?
+for (let key in user) {
+    console.log(user[key])  // 변수 쓸 때는 '' 넣지 않음 
+}
+
+
+
+// 2) while문
+// while (조건) {실행될 코드}
+// 무한 반복이 될 수 있기 때문에 거짓 조건을 명확하게 명시해야 한다.
+
+// 예제) 1부터 10까지 더하기
+let i = 1       // 초기값
+let sum = 0     // 합계를 저장할 변수
+
+while (i <= 10) {
+sum = sum + i       // 축약: sum += i
+i = i + 1           // 축약: i += 1     // 더 축약: i++
+}
+
+console.log(sum)
+
+
+
+// 3) do while문
+// do {실행될 코드} while (조건)
+// 코드를 먼저 실행하고 조건을 검사한다.
+// while문과 동일하게 동작하지만, 조건이 false일지라도 최소 한 번은 실행된다.
+
+
+// 예제) 0부터 9까지 출력
+let j = 0
+
+do {
+    console.log(j)
+    j++
+
+}while (j < 10)
