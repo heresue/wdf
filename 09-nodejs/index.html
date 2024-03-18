@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- module로 쓸 스크립트이기 때문에 type="module" 을 추가한다 -->
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./comm.js"></script>
+</head>
+<body>
+    <!-- 패키지 설치: npm 또는 yarn 중 하나 설치 -->
+    <!-- https://odada.me/246 참고 -->
+
+
+    <!-- 서버 돌리기: npm run dev
+    만약 오류날 경우 (Error: Expected content key de1e4a02ec63c4eb to exist)
+    컨트롤 c (clear) - 캐쉬 삭제(cache, dist) - npm run dev
+        리액트에서 설치하거나 할때도 서버를 끊어주고, 다시 돌려줘야한다. -->
+
+
+
+    <!-- 스와이퍼 (스와이퍼 홈페이지 get started 참고) -->
+    <!-- Slider main container -->
+    <div class="swiper slide-main">     <!-- 스와이퍼 이름은 각각 따로 정해준다(slide-main 추가)-->
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+</body>
+</html>
